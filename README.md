@@ -2,6 +2,11 @@
 
 Javascript object wrapper that makes handling deeply nested field configurations easy.
 
+### Tests
+```bash
+npm test
+```
+
 ### Usage
 Say you have an object
 ```javascript
@@ -54,9 +59,4 @@ now if we have some object let's wrap it and resolve.
 var obj = {/* some object with control fields */};
 
 var transformedObj = oWrap.resolve(obj);
-```
-
-### Tests
-```bash
-npm test
 ```
