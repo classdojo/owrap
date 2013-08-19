@@ -27,31 +27,36 @@ these objects.
 oWrap = require("owrap")();
 
 //tell oWrap to always run a
-oWrap.on('field:_id', function(field, callback) {
+oWrap.on('field:_id', function(field) {
   console.log("Doing something with", field);
-  callback(null, field);
+  return "SomeOtherVal";
 });
 
 //if it's a control field, the whole object value is passed to the function.
-oWrap.on('control:$type', function(obj, callback) {
+oWrap.on('control:$type', function(obj) {
   if(obj.$type == 'virtual') {
     //do something
-    callback(null, obj);
+
   } else {
     //do something else
-    callback(null, obj);
   }
+  return "someOtherValue";
 });
 
 //we can even load events on more granular control types
-oWrap.on('control:$type:virtual', function(obj, callback) {
+oWrap.on('control:$type:virtual', function(obj) {
   //do some operation on only virtual types
-  callback(null, obj);
+  return "someOtherValue";
 });
 ```
 now if we have some object let's wrap it and resolve.
 ```javascript
 var obj = {/* some object with control fields */};
 
-var transformedObj = oWrap(obj).resolve();
+var transformedObj = oWrap.resolve(obj);
+```
+
+### Tests
+```bash
+npm test
 ```
