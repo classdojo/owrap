@@ -25,8 +25,8 @@ Say you have an object
 }
 ```
 We can define control fields for any number of fields in an object, but parsing and interpreting these
-control fields ad-hoc can get messy. Instead, we can use a configured isnstance of owrap to easily resolve
-these objects.
+control fields ad-hoc can get messy. Instead, we can use a configured instance of owrap to easily resolve
+these objects.  Owrap searches and resolves deeply nested fields too.
 
 ```javascript
 oWrap = require("owrap")();
