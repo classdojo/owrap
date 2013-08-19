@@ -1,0 +1,30 @@
+{
+    "name": "owrap",
+    "description": "Easy object configurations",
+    "version": "0.0.0",
+    "homepage": "",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "author": "Chris Olivares <chris@classdojo.com>",
+    "license": "MIT",
+    "main": "./index.js",
+    "scripts": {
+      "watch" : "coffee -c -w  -o lib src",
+      "test": "make test"
+    },
+    "directories": {
+        "lib": "."
+    },
+    "dependencies": {
+        "deep": "0.0.1"
+    },
+    "devDependencies": { 
+        "mocha": "1.7.x",
+        "expect.js": "0.2.0"
+    },
+    "engines": {
+        "node": ">=0.6.19"
+    }
+}
